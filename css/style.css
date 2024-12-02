@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.margin-m1 {
+    margin: 80px 0px;
+}
+
+p {
+    color: #a0a4a4;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    background-color: #f4eee8;
+    transition: 1s;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active {
+    color: var(--btn) !important;
+}
+
+.nav-item {
+    transition: 1s;
+}
+
+.nav-item a:hover {
+    color: #6c7ae0;
+}
+.logo{
+    color: #6c7ae0;
+}
+.carousel-item img {
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.carousel-caption h1 {
+
+    font-size: 71px;
+}
+
+.normal {
+    background-color: #6c7ae0;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.normal:hover {
+    background-color: #0e7086;
+}
+
+/* banner is start  */
+/* Base styles for the column */
+.hover-col {
+    position: relative;
+    overflow: hidden;
+    /* Keep content within the column */
+}
+
+/* Card body styling */
+.hover-col .card-body {
+    position: relative;
+    z-index: 1;
+    /* Ensure the card body stays above other elements */
+}
+
+/* Button container */
+.button-container {
+    position: absolute;
+    bottom: -50px;
+    /*Initially hidden below the card body */
+    left: 21%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.4s ease, bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Button styling */
+.animated-btn {
+    background-color: #6c7ae0;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the button */
+.animated-btn:hover {
+    transform: scale(0.9);
+    /* Slight zoom */
+}
+
+/* Column hover effect to show the button */
+.hover-col:hover .button-container {
+    bottom: 10px;
+    left: 80px;
+    /* Move the button up to visible position */
+    opacity: 1;
+    /* Fade in */
+}
+
+.card {
+    width: 100%;
+    height: 500px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btgrp{
+    border: none;
+    background-color: transparent;
+    color: #565554;
+}
+.beactive{
+    color: black;
+}

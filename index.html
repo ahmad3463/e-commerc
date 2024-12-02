@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-commerce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="asessts/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- using for navBar -->
+  <nav class="navbar navbar-expand-lg " id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bolder ps-5" href="#">Sky<span class="logo">Way</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-bolder">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Shop</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link  " href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button type="button" class="normal">Submit</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section or carosel -->
+  <section class="carousel">
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="img/slide-01.jpg.webp" class="d-block w-100" alt="...">
+          <div class="carousel-caption top-0 end-100 mt-5 pt-5  me-5 d-none d-md-block w-50">
+            <h3 class=" mt-5 pt-5 me-5 fs-5 text-dark">women Collecton 2024</h3>
+            <h1 class=" mt-2 me-5 text-dark">New season</h1>
+            <button class="normal me-2 mt-3"> Shop now</button>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="img/slide-02.jpg.webp" class="d-block w-100" alt="...">
+          <div class="carousel-caption top-0 end-100 mt-5 pe-3 pt-5 me-5 d-none d-md-block w-50">
+            <h3 class=" mt-5 pt-5 me-5 fs-5 text-dark">Men New-Season</h3>
+            <h1 class=" mt-2 me-5 pe-5 text-dark">Jackets & Coats</h1>
+            <button class="normal me-2 mt-3"> Shop now</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/slide-03.jpg.webp" class="d-block w-100" alt="...">
+          <div class="carousel-caption top-0 end-100 mt-5 pt-5 me-5 d-none d-md-block w-50">
+            <h3 class=" mt-5 pt-5 me-5 fs-5 text-dark">Men Collecton 2024</h3>
+            <h1 class=" mt-2 me-5 text-dark">New Arrivals</h1>
+            <button class="normal me-2 mt-3"> Shop now</button>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </section>
+
+  <!-- banner section is start -->
+  <div class="container text-center margin-m1">
+    <div class="row">
+      <div class="col-lg-4 position-relative hover-col">
+        <div class="card">
+          <img src="img/banner-01.jpg.webp" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body position-absolute top-0 mt-4 ms-5">
+          <h3 class="card-text fw-bolder">Women</h3>
+          <p class="fs-6 me-2">spring 2024</p>
+        </div>
+        <div class="button-container">
+          <button class="animated-btn">Shop Now</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 position-relative hover-col">
+        <div class="card">
+          <img src="img/banner-02.jpg.webp" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body position-absolute top-0 mt-4 ms-5">
+          <h3 class="card-text fw-bolder">Men</h3>
+          <p class="fs-6 me-2">spring 2024</p>
+        </div>
+        <div class="button-container">
+          <button class="animated-btn">Shop Now</button>
+        </div>
+      </div>
+      <div class="col-lg-4 position-relative hover-col">
+        <div class="card">
+          <img src="img/banner-03.jpg.webp" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body position-absolute top-0 mt-4 ms-5">
+          <h3 class="card-text fw-bolder">Accessories</h3>
+          <p class="fs-6 me-2">New Trend</p>
+        </div>
+        <div class="button-container">
+          <button class="animated-btn">Shop Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- product section is start  -->
+  <div class="container-fluid margin-m1 position-relative">
+    <h1 class="ms-5">Product Overview</h1>
+      <div class="btngrounp d-flex justify-content-evenly w-50  mt-5">
+        <button class="btgrp beactive border-bottom border-dark">All products</button>
+        <button class="btgrp">Women</button>
+        <button class="btgrp">Men</button>
+        <button class="btgrp">Blog</button>
+        <button class="btgrp">Shoes</button>
+        <button class="btgrp">Watches</button>
+      </div>
+
+      <div class="filter position-absolute end-0 pb-5">
+        <p>
+          <button 
+            class="btn btn-primary" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#collapseWidthExample" 
+            aria-expanded="false" 
+            aria-controls="collapseWidthExample">
+            Toggle width collapse
+          </button>
+        </p>
+        <div style="min-height: 50px; position: relative;">
+          <!-- Collapse container with right-to-left animation -->
+          <div 
+            class="collapse collapse-horizontal" 
+            id="collapseWidthExample" 
+            style="position: absolute; top: 0; right: 0; width: 0; overflow: hidden; transition: width 0.35s;">
+            <div class="card card-body" style="width: 1180px;">
+              This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+            </div>
+          </div>
+        </div>
+      </div>
+          
+      
+  </div>
+  <script src="asessts/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
