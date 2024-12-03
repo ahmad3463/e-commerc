@@ -125,6 +125,8 @@ nav.sticky {
     /* Fade in */
 }
 
+/* card  */
+
 .card {
     width: 100%;
     height: 500px;
@@ -236,7 +238,7 @@ nav.sticky {
 /* footer is start  */
 
 .footer{
-    padding: 80px 0;
+    padding-top: 80px ;
     background-color: #000;
     color: #fff;
 }
@@ -250,6 +252,9 @@ nav.sticky {
     text-transform: uppercase;
     font-size: 12px;
     color:#939090;
+}
+.footer ul li a:hover{
+    color: #6c7ae0;
 }
 
 .footer-para{
@@ -268,4 +273,35 @@ nav.sticky {
     border: none;
     border-bottom: 1px solid wheat;
     outline: none;
+}
+
+@media (max-width: 799px) {
+    .pcard{
+        width: 27vw;
+    }
+}
+
+@media (max-width: 499px) {
+
+    .caro-text{
+        width: 100%;
+    }
+    .caro-text h3{
+        font-size: 15px !important;
+    }
+    .caro-text h1{
+        font-size: 50px !important;
+    }
+
+    .hover-col{
+        margin-bottom: 20px;
+    }
+
+    .pcard{
+        width: 70vw;
+    }
+
+    .footer-md{
+        margin-top: 30px;
+    }
 }
