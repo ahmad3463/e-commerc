@@ -141,3 +141,92 @@ nav.sticky {
 .beactive{
     color: black;
 }
+
+/* all product is start  */
+
+.phead{
+    color: #838282 !important;
+    margin-left: 10px;
+}
+.pcard{
+    width: 20vw;
+}
+.card-text img{
+    width: 15px;
+}
+.card span {
+    color: #6f6e6e;
+    font-size: 15px;
+    
+}
+
+
+/* Parent container hover styles */
+/* Parent container hover styles */
+.prod-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card body remains above other elements */
+.prod-hover .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Button container starts hidden below the card */
+.probutton {
+    position: absolute;
+    bottom: -50px; /* Initially off-screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.4s ease, bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animates both opacity and position */
+}
+
+/* Styling for the button */
+.pro-card-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pro-card-btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+/* Button hover effect */
+.pro-card-btn:hover {
+    transform: scale(0.9); /* Slight zoom */
+}
+
+/* When hovering on the card, slide up and fade in the button */
+.prod-hover:hover .probutton {
+    bottom: 90px; /* Moves into visible position */
+    opacity: 1; /* Fades in */
+}
+
+.pmain-btn {
+    font-weight: 400;
+    background-color: #e6e6e6;
+    color: #000;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.pmain-btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+
