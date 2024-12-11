@@ -8,3 +8,9 @@ window.addEventListener('scroll' , () => {
         navBar.classList.remove("sticky");
     }
 });
+
+// product section 
+
+document.getElementById("product-1").addEventListener('click' , function (){
+    window.location.href="detail.html?product=1;";
+})
