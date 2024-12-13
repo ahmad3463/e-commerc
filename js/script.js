@@ -12,5 +12,5 @@ window.addEventListener('scroll' , () => {
 // product section 
 
 document.getElementById("product-1").addEventListener('click' , function (){
-    window.location.href="detail.html?product=1;";
+    window.location.href="detail.html?product=card1;";
 })
