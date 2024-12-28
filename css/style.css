@@ -30,6 +30,19 @@ nav.sticky {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.nav-icons{
+    cursor: pointer;
+}
+.nav-icons i span{
+    font-size: 10px;
+    background-color: #6c7ae0 !important;
+    color: #fff;
+    padding: 4px;
+}
+
+.nav-icons i:hover {
+    color: #6c7ae0;
+}
 .active {
     color: var(--btn) !important;
 }
@@ -68,6 +81,7 @@ nav.sticky {
 .normal:hover {
     background-color: #000;
 }
+
 
 /* banner is start  */
 /* Base styles for the column */
