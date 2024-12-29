@@ -17,8 +17,9 @@ p {
 nav {
     width: 100%;
     position: relative;
-    background-color: #f4eee8;
+    background-color: #fff;
     transition: 1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav.sticky {
@@ -220,7 +221,10 @@ nav.sticky {
     background-color: #000;
     color: #fff;
 }
-
+.heart-active{
+    color: #6c7ae0;
+    cursor: pointer;
+}    
 /* Button hover effect */
 .pro-card-btn:hover {
     transform: scale(0.9); /* Slight zoom */

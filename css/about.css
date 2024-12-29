@@ -1,0 +1,16 @@
+.about-image {
+    width: 100%;
+    height: 40vh;
+    background-image: url('/img/about.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: brightness(0.7); */
+}
+.about-in {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.about-in h1{
+    color: #fff;
+}
