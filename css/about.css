@@ -1,3 +1,4 @@
+
 .about-image {
     width: 100%;
     height: 40vh;
@@ -11,6 +12,48 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.about-story{
+    margin: 100px 0px ;
+}
+
 .about-in h1{
     color: #fff;
+}
+
+.how-pic{
+    position: relative;
+    z-index: 1;
+}
+
+.how-pic::before{
+    content: '';
+    position: absolute;
+    border: 2px solid rgb(211, 207, 207);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 25px;
+    left: 25px;
+
+}
+
+.how-image{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.how-image img{
+    width: 100%;
+    height: 60vh;
+    transition: 0.5s;
+   
+}
+
+.how-image img:hover{
+    transform: scale(1.1);
+}
+
+.para-store{
+    border-left: 3px solid rgb(202, 197, 197);
+    
 }
