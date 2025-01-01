@@ -47,6 +47,62 @@ nav.sticky {
 .active {
     color: var(--btn) !important;
 }
+.fav-sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+  .fav-sidebar.active {
+    right: 0;
+  }
+
+  .fav-sidebar h4{
+    margin: 40px 0px;
+  }
+  
+  .fav-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .fav-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .fav-card .remove-btn {
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .close-sidebar-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background-color: transparent;
+    color: #6c7ae0;
+    font-size: 18px;
+    font-weight: bold;
+    
+  }
+  
 
 .nav-item {
     transition: 1s;
