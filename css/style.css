@@ -18,36 +18,51 @@ nav {
     width: 100%;
     position: relative;
     background-color: #fff;
-    transition: 1s;
+    transition: 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-nav.sticky {
+  }
+  
+  nav.sticky {
     position: fixed;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     z-index: 1000;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-icons{
+  }
+  
+  .nav-icons {
     cursor: pointer;
-}
-.nav-icons i span{
+  }
+  
+  .nav-icons i span {
     font-size: 10px;
     background-color: #6c7ae0 !important;
     color: #fff;
     padding: 4px;
-}
-
-.nav-icons i:hover {
+  }
+  
+  .nav-icons i:hover {
     color: #6c7ae0;
-}
-.active {
-    color: var(--btn) !important;
-}
-.fav-sidebar {
+  }
+  
+  .nav-item {
+    transition: 0.3s;
+  }
+  
+  .nav-item a:hover {
+    color: #6c7ae0;
+  }
+  
+  .active {
+    color: var(--btn, #6c7ae0) !important;
+  }
+  
+  .logo {
+    color: #6c7ae0;
+  }
+  
+  .fav-sidebar {
     position: fixed;
     right: -300px;
     top: 0;
@@ -59,12 +74,14 @@ nav.sticky {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease;
     overflow-y: auto;
+    z-index: 1050;
   }
+  
   .fav-sidebar.active {
     right: 0;
   }
-
-  .fav-sidebar h4{
+  
+  .fav-sidebar h4 {
     margin: 40px 0px;
   }
   
@@ -90,7 +107,7 @@ nav.sticky {
     padding: 5px 10px;
     cursor: pointer;
   }
-
+  
   .close-sidebar-btn {
     position: absolute;
     top: 10px;
@@ -100,26 +117,14 @@ nav.sticky {
     color: #6c7ae0;
     font-size: 18px;
     font-weight: bold;
-    
   }
   
-
-.nav-item {
-    transition: 1s;
-}
-
-.nav-item a:hover {
-    color: #6c7ae0;
-}
-.logo{
-    color: #6c7ae0;
-}
-.carousel-item img {
+  .carousel-item img {
     height: 550px;
     object-fit: cover;
     filter: brightness(0.9);
-}
-
+  }
+  
 .carousel-caption h1 {
 
     font-size: 71px;
@@ -350,13 +355,18 @@ nav.sticky {
 }
 
 @media (max-width: 799px) {
+    .nav-icons i {
+        cursor: pointer;
+      }
     .pcard{
         width: 27vw;
     }
 }
 
 @media (max-width: 499px) {
-
+    .nav-icons i {
+        cursor: pointer;
+      }
     .caro-text{
         width: 100%;
     }

@@ -14,57 +14,44 @@
 <body>
 
   <!-- using for navBar -->
-  <nav class="navbar navbar-expand-lg " id="navbar">
+  <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand fw-bolder ps-5" href="#">Sky<span class="logo">Way</span></a>
+  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+  
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-bolder">
-          <li class="nav-item">
-            <a class="nav-link active " aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="shop.html">Shop</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link  " href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="blog.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Contact Us</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
         </ul>
-
-        <div class="nav-icons d-none d-sm-block me-5">
-          <i class="fa-solid fa-cart-shopping fs-5 me-3 position-relative">
-            <span class="position-absolute top-0 start-100 translate-middle border border-light rounded-circle">
-              2
-            </span>
-          </i>
-          <!-- Favorites Button -->
-          
-            <i class="fa-regular fa-heart fs-5 position-relative" id="fav-toggle-btn">
-              <span class="position-absolute top-0 start-100 translate-middle border border-light rounded-circle"
-                id="main-fav-btn">
-                0
-              </span>
-            </i>
-
-          <!-- Sidebar for Favorites -->
-          <div id="fav-sidebar" class="fav-sidebar">
-            <button id="close-sidebar-btn" class="close-sidebar-btn">X</button>
-            <h4>Your Favorites</h4>
-            <div id="fav-items"></div>
-          </div>
-        </div>
       </div>
+  
+        <div class="nav-icons d-flex align-items-center gap-3 ms-auto mt-3 mt-lg-0">
+          <i class="fa-solid fa-cart-shopping fs-5 position-relative">
+            <span class="position-absolute top-0 start-100 translate-middle border border-light rounded-circle">2</span>
+          </i>
+  
+          <i class="fa-regular fa-heart fs-5 position-relative" id="fav-toggle-btn">
+            <span class="position-absolute top-0 start-100 translate-middle border border-light rounded-circle"
+              id="main-fav-btn">0</span>
+          </i>
+        </div>
+      
     </div>
   </nav>
+
+  <div id="fav-sidebar" class="fav-sidebar">
+    <button id="close-sidebar-btn" class="close-sidebar-btn">X</button>
+    <h4>Your Favorites</h4>
+    <div id="fav-items"></div>
+  </div>
 
   <!-- hero section or carosel -->
   <section class="carousel">
@@ -201,7 +188,7 @@
                   <img src="img/product-01.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -215,7 +202,7 @@
                   <img src="img/product-02.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i> </p>
+                        class="fa-regular fa-heart mt-2 heart-btn "></i> </p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -229,7 +216,7 @@
                   <img src="img/product-03.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -243,7 +230,7 @@
                   <img src="img/product-04.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -257,7 +244,7 @@
                   <img src="img/product-05.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -271,7 +258,7 @@
                   <img src="img/product-06.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -285,7 +272,7 @@
                   <img src="img/product-07.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -299,7 +286,7 @@
                   <img src="img/product-08.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -313,7 +300,7 @@
                   <img src="img/product-09.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -327,7 +314,7 @@
                   <img src="img/product-10.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -341,7 +328,7 @@
                   <img src="img/product-11.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -355,7 +342,7 @@
                   <img src="img/product-12.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -369,7 +356,7 @@
                   <img src="img/product-13.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -383,7 +370,7 @@
                   <img src="img/product-14.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -397,7 +384,7 @@
                   <img src="img/product-15.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
@@ -411,7 +398,7 @@
                   <img src="img/product-16.jpg.webp" class="card-img-top" alt="...">
                   <div class="card-body">
                     <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <i
-                        class="fa-regular fa-heart mt-2"></i></p>
+                        class="fa-regular fa-heart mt-2 heart-btn"></i></p>
                   </div>
                   <span class="ms-3 ">$34.37</span>
                   <div class="probutton">
