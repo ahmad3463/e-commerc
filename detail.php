@@ -10,40 +10,6 @@
 </head>
 <body>
 
-  <!-- navbar is started  -->
-  <nav class="navbar navbar-expand-lg " id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bolder ps-5" href="#">Sky<span class="logo">Way</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-bolder">
-          <li class="nav-item">
-            <a class="nav-link active " aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="shop.html">Shop</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link  " href="shop.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="blog.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact Us</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button type="button" class="normal">Submit</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
 
   
     <div class="container d-flex">
