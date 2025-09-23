@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<?php include 'header.php'?>
 
   <div id="fav-sidebar" class="fav-sidebar">
     <button id="close-sidebar-btn" class="close-sidebar-btn">X</button>
@@ -640,7 +640,7 @@
   </div>
 
   <!-- footer is start  -->
-
+<?php include 'footer.php'?>
 
 
   <script src="asessts/js/bootstrap.bundle.min.js"></script>

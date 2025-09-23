@@ -11,7 +11,7 @@
 </head>
 <body>
 
-
+<?php include 'header.php'?>
    <!-- product section is start  -->
    <div class="container-fluid margin-m1 position-relative">
     <h1 class="ms-5">Product Overview</h1>
@@ -513,7 +513,7 @@
 
 
 
-
+  <?php include 'footer.php'?>
   <script src="js/script.js"></script>
     
 </body>

@@ -14,6 +14,8 @@
 
 <body>
 
+<?php include 'header.php' ?>
+
     <!-- about-in  -->
   <section class="about-in ">
     <div class="about-image d-flex justify-content-center align-items-center">
@@ -69,6 +71,7 @@
       </div>
      </section>
 
+  <?php include 'footer.php'; ?>
 
 
 

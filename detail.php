@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<?php include 'header.php'?>
 
   
     <div class="container d-flex">
@@ -45,6 +45,7 @@
       </div>
 
 
+      <?php include 'footer.php'; ?>
     <script src="asessts/js/bootstrap.bundle.min.js"></script>
     <script src="js/detail.js"></script>
 </body>
