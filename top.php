@@ -40,42 +40,22 @@
     <h4 class="text-white mb-4"><?php echo $_SESSION['user_name'] ?></h4>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="dashboard.php" class="nav-link <?php echo ($current_page == 'dashboard') ? 'active' : ''; ?> ">Dashboard</a>
+      </li>
+        <a href="products.php" class="nav-link  <?php echo ($current_page == 'products') ? 'active' : ''; ?> ">Add-Products</a>
       </li>
       <li>
-        <a href="#profileSubmenu" data-bs-toggle="collapse" class="nav-link">Profile</a>
-        <ul class="collapse nav flex-column ms-3" id="profileSubmenu">
-          <li><a href="#" class="nav-link">View Profile</a></li>
-          <li><a href="#" class="nav-link">Edit Profile</a></li>
-        </ul>
+        <a href="#" class="nav-link"  <?php echo ($current_page == 'orders') ? 'active' : ''; ?> >Orders</a>
       </li>
       <li>
-        <a href="#settingsSubmenu" data-bs-toggle="collapse" class="nav-link">Settings</a>
-        <ul class="collapse nav flex-column ms-3" id="settingsSubmenu">
-          <li><a href="#" class="nav-link">General</a></li>
-          <li><a href="#" class="nav-link">Security</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" class="nav-link">Products</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link">Orders</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link">Users</a>
+        <a href="#" class="nav-link  <?php echo ($current_page == 'users') ? 'active' : ''; ?> ">Users</a>
       </li>
     </ul>
     <hr>
     <a href="logout.php" class="nav-link text-danger">Logout</a>
   </div>
 
-  <!-- Content -->
-  <div class="content">
-    <h2>Welcome, <?= $_SESSION['user_name'] ?></h2>
-    <p>This is your admin dashboard content area.</p>
-  </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
