@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
     $severname = "localhost";
     $dbname = "skyway";
     $username = "root";

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="asessts/css/bootstrap.min.css">
   <title>Login</title>
   <style>
     body {
@@ -71,12 +72,58 @@
 <body>
   <div class="form-container">
     <h2>Welcome Back</h2>
-    <form method="POST" action="login_action.php">
+    <form method="POST" action="" id='loginForm'>
       <input type="email" name="email" placeholder="Email Address" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+    <p>Dont have an account? <a href="signup.php">Sign Up</a></p>
+    <p id="message" class="text-danger"></p>
   </div>
 </body>
 </html>
+
+
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+
+
+$(document).ready(function () {
+  $('#loginForm').submit(function (e) {
+    e.preventDefault(); // stop page reload
+
+    // Collect form data
+    var formData = {
+      email: $("input[name='email']").val(),
+      password: $("input[name='password']").val()
+    };
+
+    $.ajax({
+      url: 'auth/AjaxLogin.php',
+      method: 'POST',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify(formData),
+      success: function (data) {
+        if (data.status) {
+         
+          if (data.user.role === 'admin') {
+            window.location.href = "dashboard.php"; 
+          } else {
+            window.location.href = "index.php"; 
+          }
+        } else {
+        
+          $('#message').html(data.message);
+        }
+      },
+      error: function () {
+        $('#message').html("Something went wrong. Please try again.");
+      }
+    });
+  });
+});
+
+</script>
+

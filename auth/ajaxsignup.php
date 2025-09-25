@@ -7,6 +7,7 @@ header("Content-Type: application/json");
     $username = $data['username'] ?? '';
     $useremail = $data['useremail'] ?? '';
     $userpass = $data['userpass'] ?? '';
+    $role = $data['role'] ?? 'users';
 
     if(!$username || !$userpass || !$useremail ){
         echo json_encode(["message" => "All fields are required" , "status" => false]);
@@ -23,13 +24,19 @@ header("Content-Type: application/json");
 
 
     $hashpassword = password_hash($userpass , PASSWORD_DEFAULT);
+    if($useremail === "admin@admin.com"){
+       $role = "admin";   
+    }
 
-    try {
-        $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?,?,?)");
-        $stmt->execute([$username , $useremail , $hashpassword]);
+    try{
+        
+ 
+        $stmt = $conn->prepare("INSERT INTO users (name, email, password , role) VALUES (?,?,?,?)");
+        $stmt->execute([$username , $useremail , $hashpassword , $role]);
       
-        echo json_encode(["message" => "User Successfully Registered" , "status" => true]);
-    } catch (PDOException $e) {
+        echo json_encode(["message" => " Successfully Registered" , "status" => true , "role" => $role]);
+    }
+     catch (PDOException $e) {
         echo json_encode(["message" => "Error :" . $e->getMessage() , "status" => false]);
     }
 

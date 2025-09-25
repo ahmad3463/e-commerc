@@ -79,7 +79,7 @@
       <button type="submit">Sign Up</button>
     </form>
     <p>Already have an account? <a href="login.php">Login</a></p>
-    <p id="datamessage"></p>
+    <p id="datamessage" class="text-danger"></p>
   </div>
 </body>
 </html>
@@ -101,15 +101,13 @@ $(document).ready(function () {
     $.ajax({
       url: 'auth/ajaxsignup.php',
       method: 'POST',
+      dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify(formData),
       success: function(data){
         $('#datamessage').html(data.message);
       },
-      error: function(xhr , status , error){
-        $('#datamessage').html("Something went wrong: " + error);
-        console.log("Something went wrong:" + error);
-      }
+     
     })
    })
 })
