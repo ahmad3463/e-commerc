@@ -106,6 +106,7 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       success: function(data){
         $('#datamessage').html(data.message);
+        window.location.href = "index.php";
       },
      
     })

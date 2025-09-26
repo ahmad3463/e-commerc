@@ -39,22 +39,25 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
         //............... insert product images .............//
 
-        if(!empty($_FILES['images']['name'][0])){
-            $uploadDir = "../img/uploads";
+        if (!empty($_FILES['images']['name'][0])) {
+            $uploadDir = "../img/uploads/"; // with slash
             $stmtImages = $conn->prepare("INSERT INTO product_images (product_id, image_url) VALUES (:product_id , :image_path)");
-            foreach($_FILES['images']['name'] as $key => $imageName){
+        
+            foreach ($_FILES['images']['name'] as $key => $imageName) {
                 $tmpName = $_FILES['images']['tmp_name'][$key];
-                $targetFile = $uploadDir . uniqid() . "_" . basename($imageName);
-
-                if(move_uploaded_file($tmpName , $targetFile)){
+                $uniqueName = uniqid() . "_" . basename($imageName);
+                $targetFile = $uploadDir . $uniqueName;
+        
+                if (move_uploaded_file($tmpName, $targetFile)) {
+                    // ✅ only store filename
                     $stmtImages->execute([
                         ":product_id" => $product_id,
-                        ":image_path" => $targetFile
+                        ":image_path" => $uniqueName
                     ]);
                 }
             }
-            
         }
+        
 
         $conn->commit();
 
