@@ -138,7 +138,7 @@
               <p class="card-price fw-bold text-primary mb-1">Rs <?= number_format($product['price'], 2); ?></p>
               <p class="card-text text-muted small"><?= substr($product['description'], 0, 50); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                <a class="btn btn-sm btn-outline-primary" href="add_to_cart.php?id=<?= $product['id']?>">Add to Cart</a>
                 <i class="fa-regular fa-heart heart-btn"></i>
               </div>
             </div>

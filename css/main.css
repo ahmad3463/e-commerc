@@ -3,64 +3,83 @@
 }
 
 .product-card {
-    width: 70% !important;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
+    margin-left: 16px;
+    width: 90%; /* better responsive */
+    border-radius: 14px;
     overflow: hidden;
+    border: 1px solid #f0f0f0;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   }
   
+  /* Image wrapper */
   .card-img-wrapper {
     position: relative;
     overflow: hidden;
   }
   
   .card-img-top {
-    height: 300px !important;
+    height: 280px !important;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
   }
   
   .product-card:hover .card-img-top {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   
+  /* Overlay button */
   .card-overlay {
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 0;
     right: 0;
     text-align: center;
-    transition: bottom 0.3s ease;
+    transition: bottom 0.4s ease;
   }
   
   .product-card:hover .card-overlay {
-    bottom: 10px;
+    bottom: 15px;
   }
   
   .quick-view-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 14px;
-  }
-  
-  .card-price {
-    font-size: 1rem;
-  }
-  
-  .heart-btn {
-    font-size: 18px;
+    background: #ff6f61;
+    color: #fff;
+    border-radius: 25px;
+    padding: 8px 18px;
+    font-size: 15px;
+    border: none;
     cursor: pointer;
-    color: #dc3545;
-    transition: transform 0.2s ease;
+    transition: background 0.3s ease;
+  }
+  
+  .quick-view-btn:hover {
+    background: #e65347;
+  }
+  
+  /* Price styling */
+  .card-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6c7ae0 !important;
+    margin: 10px 0;
+  }
+  
+  /* Heart icon */
+  .heart-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color:  #6c7ae0 !important;
+    transition: transform 0.2s ease, color 0.3s ease;
   }
   
   .heart-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    color: #6c7ae0;
   }
   
