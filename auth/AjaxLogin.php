@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userpass  = $data['password'] ?? '';
 
     if (!$useremail || !$userpass) {
-        echo json_encode(["message" => "Email and password required", "status" => false]);
+        echo json_encode(["message" => "email and password required", "status" => false]);
         exit;
     }
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
                     exit;
             } else {
-                echo json_encode(["message" => "Invalid password", "status" => false]);
+                echo json_encode(["message" => "invalid password", "status" => false]);
             }
         } else {
             echo json_encode(["message" => "no account found on this email", "status" => false]);

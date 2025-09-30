@@ -2,3 +2,65 @@
     --btn: #6c7ae0; 
 }
 
+.product-card {
+    width: 70% !important;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    height: 300px !important;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .product-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  
+  .card-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: bottom 0.3s ease;
+  }
+  
+  .product-card:hover .card-overlay {
+    bottom: 10px;
+  }
+  
+  .quick-view-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+  
+  .card-price {
+    font-size: 1rem;
+  }
+  
+  .heart-btn {
+    font-size: 18px;
+    cursor: pointer;
+    color: #dc3545;
+    transition: transform 0.2s ease;
+  }
+  
+  .heart-btn:hover {
+    transform: scale(1.2);
+  }
+  

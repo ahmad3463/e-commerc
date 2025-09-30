@@ -118,9 +118,9 @@ $(document).ready(function () {
           $('#message').html(data.message);
         }
       },
-      error: function () {
-        $('#message').html("Something went wrong. Please try again.");
-      }
+      // error: function (xhr, status, error  ) {
+      //   console.log(error)
+      // }
     });
   });
 });
