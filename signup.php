@@ -108,9 +108,9 @@ $(document).ready(function () {
         $('#datamessage').html(data.message);
         window.location.href = "index.php";
       },
-      // error: function(xhr , status ,error){
-      //   console.log( error);
-      // }
+      error: function(xhr , status ,error){
+        console.log( error);
+      }
      
     })
    })

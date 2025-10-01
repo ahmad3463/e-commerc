@@ -1,0 +1,19 @@
+.card {
+    border-radius: 10px;
+    border: none;
+  }
+  .order-summary {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .btn-checkout {
+    background-color: #ff6f00;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .btn-checkout:hover {
+    background-color: #e65c00;
+    color: white;
+  }

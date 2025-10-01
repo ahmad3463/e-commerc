@@ -1,3 +1,5 @@
+
+<?php include 'config/conn.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,322 +15,51 @@
 
 <?php include 'header.php'?>
    <!-- product section is start  -->
-   <div class="container-fluid margin-m1 position-relative">
-    <h1 class="ms-5">Product Overview</h1>
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="nav nav-underline text-decoration-none ms-5 " id="myTab">
-          <li class="nav-item me-3">
-            <a  class="nav-link active phead " data-bs-toggle="tab" href="#allproduct">
-              All product
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link phead" data-bs-toggle="tab" href="#women">
-            Women
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link phead " data-bs-toggle="tab" href="#men">
-              Men
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link phead " data-bs-toggle="tab" href="#bag">
-             Bag
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link phead " data-bs-toggle="tab" href="#Shoes">
-             Shoes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link phead " data-bs-toggle="tab" href="#watches">
-              Watches
-            </a>
-          </li>
-        </ul>
-        <div class="tab-content ms-5" id="myTabContent">
-          <!-- allproduct tab is starting here  -->
-          <div class="tab-pane show active fade py-5" id="allproduct">
-            <div class="row row-cols-md-3">
-              <div class="col-lg-3 col-md-4 mb-4 nation ">
-                <div class="card h-100 pcard border-0  prod-hover " >
-                  <img src="img/product-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper  <i class="fa-regular fa-heart mt-2"></i></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn" id="product-1">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
+   <div class="container-fluid margin-m1 position-relative py-5">
+  <h1 class="fw-bold text-center mb-5">Product Overview</h1>
+  <div class="row g-4">
+    <?php
+    $stmt = $conn->prepare("SELECT p.id, p.name, p.description, p.price, p.stock, 
+       (SELECT image_url FROM product_images WHERE product_id = p.id LIMIT 1) as image_url
+          FROM products p
+          ORDER BY p.id ASC");
+    $stmt->execute();
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-02.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper  <i class="fa-regular fa-heart mt-2"></i> </p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-                <!-- creating button for read more  -->
-                
+    <?php if ($products): ?>
+      <?php foreach ($products as $product): ?>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100 shadow-sm border-0">
+            <div class="card-img-wrapper">
+              <img src="img/uploads/<?= $product['image_url'] ? $product['image_url'] : 'img/no-image.png'; ?>" 
+                   class="card-img-top" alt="<?= htmlspecialchars($product['name']); ?>">
+             
             </div>
-            <div class="row text-center">
-              <div class="col text-center mt-5 me-2">
-                <button class="pmain-btn mt-3">View More </button>
+            <div class="card-body">
+              <h6 class="card-title mb-2"><?= htmlspecialchars($product['name']); ?></h6>
+              <p class="card-price fw-bold text-primary mb-1">Rs <?= number_format($product['price'], 2); ?></p>
+              <p class="card-text text-muted small"><?= substr($product['description'], 0, 50); ?>...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a class="btn btn-sm btn-outline-primary" href="add_to_cart.php?id=<?= $product['id']?>">Add to Cart</a>
+                <i class="fa-regular fa-heart heart-btn"></i>
               </div>
             </div>
-           
           </div>
-
-          <!-- women tab is starting here  -->
-          <div class="tab-pane fade py-5" id="women">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col-lg-3 mb-4 ">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-01.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-03.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-04.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-05.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-06.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-08.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-10.jpg.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-13.jpg.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-16.jpg.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-                <!-- creating button for read more  -->
-              <div class="col text-center mt-5 me-2">
-                <button class="pmain-btn mt-3">Read More </button>
-              </div>
-
-            </div>
-          </div>
-
-            <!-- men tab is starting here  -->
-          <div class="tab-pane fade py-5" id="men">
-            <div class="row row-cols-md-3">
-
-              <div class="col-lg-3  mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-07.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-11.jpg.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-              <div class="col-lg-3 mb-4">
-                <div class="card h-100 pcard border-0  prod-hover">
-                  <img src="img/product-12.jpg.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                  </div>
-                  <span class="ms-3 ">$34.37</span>
-                  <div class="probutton">
-                    <button class="pro-card-btn">Quick Veiw</button>
-                  </div>
-                </div>   
-              </div>
-
-            </div>
-          </div>
-
-          <!-- bag tab is starting here  -->
-          <div class="tab-pane fade py-5" id="Bag">
-              
-          </div>
-
-          <!-- shoes tab is starting here  -->
-          <div class="tab-pane fade py-5" id="Shoes">
-              <div class="row">
-
-                <div class="col-lg-3 mb-4">
-                  <div class="card h-100 pcard border-0  prod-hover">
-                    <img src="img/product-09.jpg.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                    </div>
-                    <span class="ms-3 ">$34.37</span>
-                    <div class="probutton">
-                      <button class="pro-card-btn">Quick Veiw</button>
-                    </div>
-                  </div>   
-                </div>
-
-              </div>
-          </div>
-
-
-          <!-- watches is starting here  -->
-          <div class="tab-pane fade py-5" id="watches">
-           <div class="row row-cols-md-3">
-            <div class="col-lg-3 mb-4">
-              <div class="card h-100 pcard border-0  prod-hover">
-                <img src="img/product-02.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                </div>
-                <span class="ms-3 ">$34.37</span>
-                <div class="probutton">
-                  <button class="pro-card-btn">Quick Veiw</button>
-                </div>
-              </div>   
-            </div>
-
-            <div class="col-lg-3 mb-4">
-              <div class="card h-100 pcard border-0  prod-hover">
-                <img src="img/product-15.jpg.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text d-flex justify-content-between ">Front Pocket Jumper <img src="img/heart.svg" class="mt-2"></p>
-                </div>
-                <span class="ms-3 ">$34.37</span>
-                <div class="probutton">
-                  <button class="pro-card-btn">Quick Veiw</button>
-                </div>
-              </div>   
-            </div>
-
-           </div>
-
-          </div>
-
         </div>
-      </div>
-    </div>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <p class="text-center">No products available</p>
+    <?php endif; ?>
   </div>
 
+  <!-- Read more button -->
+  <div class="row">
+    <div class="col text-center mt-5">
+      <a class="btn btn-primary px-4 py-2" href="shop.php">Read More</a>
+    </div>
+  </div>
+</div>
 
 
   <?php include 'footer.php'?>
