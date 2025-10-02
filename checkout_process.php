@@ -41,7 +41,7 @@ try {
     $orderId = $conn->lastInsertId();
 
     // Insert order items
-    $stmtItem = $conn->prepare("INSERT INTO order_items (order_id, product_id, quantity, price,)
+    $stmtItem = $conn->prepare("INSERT INTO order_items (order_id, product_id, quantity, price)
                                 VALUES (?, ?, ?, ?)");
     foreach ($_SESSION['cart'] as $item) {
         $stmtItem->execute([$orderId, $item['id'], $item['quantity'], $item['price']]);

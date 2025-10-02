@@ -67,7 +67,7 @@ $orderItems = $stmtItems->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="mt-4">
                 <a href="shop.php" class="btn btn-primary">🛍 Continue Shopping</a>
-                <a href="orders.php" class="btn btn-outline-secondary">📦 View My Orders</a>
+                <a href="my_orders.php" class="btn btn-outline-secondary">📦 View My Orders</a>
             </div>
         </div>
     </div>
