@@ -69,7 +69,7 @@
 
     <!-- Orders -->
     <li class="nav-item">
-      <a href="orders.php" class="nav-link <?php echo ($current_page == 'orders') ? 'active' : ''; ?>">Orders</a>
+      <a href="admin_orders.php" class="nav-link <?php echo ($current_page == 'admin_orders') ? 'active' : ''; ?>">Admin_orders</a>
     </li>
 
     <!-- Users -->
