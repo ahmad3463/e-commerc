@@ -1,391 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: "Poppins", sans-serif;
+
+body {
+  font-family: "Poppins", sans-serif;
 }
+
+    /* Navbar glass effect */
+    #navbar {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+      padding: 8px 0;
+    }
+
+    /* Logo style */
+    .navbar-brand {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+    .navbar-brand .logo {
+      color: #667eea;
+    }
+
+    /* Nav links */
+    .nav-link {
+      color: #2c3e50 !important;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #667eea !important;
+    }
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #667eea;
+      border-radius: 5px;
+    }
+
+    /* Buttons */
+    .btn-custom {
+      background: #667eea;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-custom:hover {
+      background: #5563c1;
+      color: #fff;
+    }
+    .btn-custom-outline {
+      border: 2px solid #667eea;
+      padding: 8px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #667eea;
+      transition: 0.3s;
+    }
+    .btn-custom-outline:hover {
+      background: #667eea;
+      color: #fff;
+    }
+
+    /* Icons Section */
+   /* -------- Navbar Icons Improved -------- */
+.icon-link {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.icon-link:hover {
+  color: #667eea;
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Favorite Icon (heart) */
+.icon-link .bi-heart {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.icon-link:hover .bi-heart {
+  color: #ff4d6d;
+  transform: scale(1.2);
+}
+
+/* Icon Badges */
+.cart-count, .fav-count {
+  font-size: 0.7rem;
+  padding: 2px 0px;
+  line-height: 1;
+}
+
+/* Make badges glow subtly */
+.cart-count.bg-primary, .fav-count.bg-danger {
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Optional: Pulse animation for fav icon */
+@keyframes heartPulse {
+  0% { transform: scale(1); color: #ff4d6d; }
+  50% { transform: scale(1.2); color: #ff6b81; }
+  100% { transform: scale(1); color: #ff4d6d; }
+}
+.icon-link:hover .bi-heart {
+  animation: heartPulse 0.8s ease-in-out;
+}
+
+
+
+/* ---------- Common Classes ---------- */
 .margin-m1 {
-    margin: 80px 0px;
+  margin: 80px 0px;
 }
 
 p {
-    color: #a0a4a4;
+  color: #a0a4a4;
 }
 
-nav {
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  nav.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-icons {
-    cursor: pointer;
-  }
-  
-  .nav-icons i span {
-    font-size: 10px;
-    background-color: #6c7ae0 !important;
-    color: #fff;
-    padding: 4px;
-  }
-  
-  .nav-icons i:hover {
-    color: #6c7ae0;
-  }
-  
-  .nav-item {
-    transition: 0.3s;
-  }
-  
-  .nav-item a:hover {
-    color: #6c7ae0;
-  }
-  
-  .active {
-    color: var(--btn, #6c7ae0) !important;
-  }
-  
-  .logo {
-    color: #6c7ae0;
-  }
-  
-  .fav-sidebar {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background: #fff;
-    border-left: 1px solid #ddd;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease;
-    overflow-y: auto;
-    z-index: 1050;
-  }
-  
-  .fav-sidebar.active {
-    right: 0;
-  }
-  
-  .fav-sidebar h4 {
-    margin: 40px 0px;
-  }
-  
-  .fav-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .fav-card img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .fav-card .remove-btn {
-    background: red;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .close-sidebar-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border: none;
-    background-color: transparent;
-    color: #6c7ae0;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .carousel-item img {
-    height: 550px;
-    object-fit: cover;
-    filter: brightness(0.9);
-  }
-  
-.carousel-caption h1 {
-
-    font-size: 71px;
+.logo {
+  color: #6c7ae0;
 }
 
+/* ---------- Product, Footer & Utility Styles ---------- */
 .normal {
-    background-color: #6c7ae0;
-    border: none;
-    padding: 10px 17px;
-    border-radius: 10px;
-    color: white;
-    font-weight: 700;
-    transition: 0.4s;
+  background-color: #6c7ae0;
+  border: none;
+  padding: 10px 17px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  transition: 0.4s;
 }
-
 .normal:hover {
-    background-color: #000;
+  background-color: #000;
 }
 
-
-/* banner is start  */
-/* Base styles for the column */
-.hover-col {
-    position: relative;
-    overflow: hidden;
-    /* Keep content within the column */
+.footer {
+  padding-top: 80px;
+  background-color: #000;
+  color: #fff;
 }
-
-/* Card body styling */
-.hover-col .card-body {
-    position: relative;
-    z-index: 1;
-    /* Ensure the card body stays above other elements */
-}
-
-/* Button container */
-.button-container {
-    position: absolute;
-    bottom: -50px;
-    /*Initially hidden below the card body */
-    left: 21%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    /* Initially hidden */
-    transition: opacity 0.4s ease, bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-/* Button styling */
-.animated-btn {
-    background-color: #6c7ae0;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for the button */
-.animated-btn:hover {
-    transform: scale(0.9);
-    /* Slight zoom */
-}
-
-/* Column hover effect to show the button */
-.hover-col:hover .button-container {
-    bottom: 10px;
-    left: 80px;
-    /* Move the button up to visible position */
-    opacity: 1;
-    /* Fade in */
-}
-
-/* card  */
-
-.card {
-    width: 100%;
-    height: 500px;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.btgrp{
-    border: none;
-    background-color: transparent;
-    color: #565554;
-}
-.beactive{
-    color: black;
-}
-
-/* all product is start  */
-
-.phead{
-    color: #838282 !important;
-    margin-left: 10px;
-}
-.pcard{
-    width: 20vw;
-}
-.card-text img{
-    width: 15px;
-}
-.card span {
-    color: #6f6e6e;
-    font-size: 15px;
-    
-}
-
-
-/* Parent container hover styles */
-/* Parent container hover styles */
-.prod-hover {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Card body remains above other elements */
-.prod-hover .card-body {
-    position: relative;
-    z-index: 1;
-}
-
-/* Button container starts hidden below the card */
-.probutton {
-    position: absolute;
-    bottom: -50px; /* Initially off-screen */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    opacity: 0; /* Initially invisible */
-    transition: opacity 0.4s ease, bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animates both opacity and position */
-}
-
-/* Styling for the button */
-.pro-card-btn {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.pro-card-btn:hover{
-    background-color: #000;
-    color: #fff;
-}
-.heart-active{
-    color: #6c7ae0;
-    cursor: pointer;
-}    
-/* Button hover effect */
-.pro-card-btn:hover {
-    transform: scale(0.9); /* Slight zoom */
-}
-
-/* When hovering on the card, slide up and fade in the button */
-.prod-hover:hover .probutton {
-    bottom: 90px; /* Moves into visible position */
-    opacity: 1; /* Fades in */
-}
-
-.pmain-btn {
-    font-weight: 400;
-    background-color: #e6e6e6;
-    color: #000;
-    border: none;
-    padding: 10px 35px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.pmain-btn:hover{
-    background-color: #000;
-    color: #fff;
-}
-
-/* footer is start  */
-
-.footer{
-    padding-top: 80px ;
-    background-color: #000;
-    color: #fff;
-}
-
 .footer ul {
-    list-style: none;
+  list-style: none;
 }
 .footer ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 12px;
-    color:#939090;
+  text-decoration: none;
+  color: #939090;
+  text-transform: uppercase;
+  font-size: 12px;
 }
-.footer ul li a:hover{
-    color: #6c7ae0;
+.footer ul li a:hover {
+  color: #6c7ae0;
 }
-
-.footer-para{
-    font-size: 14px;
+.footer-para {
+  font-size: 14px;
 }
-.footer-svg {
-
-    padding: 0 10px;
+.footer-email input {
+  width: 80%;
+  height: 31px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid wheat;
+  outline: none;
 }
-
-.footer-email input{
-    width: 80%;
-    height: 31px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid wheat;
-    outline: none;
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
+/* Responsive */
+@media (max-width: 991px) {
+  .btn-custom, .btn-custom-outline {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+}
+/* Responsive Adjustments */
 @media (max-width: 799px) {
-    .nav-icons i {
-        cursor: pointer;
-      }
-    .pcard{
-        width: 27vw;
-    }
+  .pcard {
+    width: 27vw;
+  }
 }
 
 @media (max-width: 499px) {
-    .nav-icons i {
-        cursor: pointer;
-      }
-    .caro-text{
-        width: 100%;
-    }
-    .caro-text h3{
-        font-size: 15px !important;
-    }
-    .caro-text h1{
-        font-size: 50px !important;
-    }
-
-    .hover-col{
-        margin-bottom: 20px;
-    }
-
-    .pcard{
-        width: 70vw;
-    }
-
-    /* .footer-md{
-        margin-top: 30px;
-    } */
+  .caro-text h1 {
+    font-size: 50px !important;
+  }
+  .pcard {
+    width: 70vw;
+  }
 }

@@ -14,59 +14,66 @@
 </head>
 
 <body>
-  <?php include 'header.php' ?>
+  <?php include 'header.php' ?> 
 
-  <div id="fav-sidebar" class="fav-sidebar">
-    <button id="close-sidebar-btn" class="close-sidebar-btn">X</button>
-    <h4>Your Favorites</h4>
-    <div id="fav-items"></div>
+ <!-- Hero Section / Carousel -->
+<section class="carousel-section">
+  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" data-bs-interval="5000">
+        <img src="img/slide-01.jpg.webp" class="d-block w-100" alt="Women's Collection 2024">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-caption text-start animate-caption">
+          <h3 class="sub-heading">Women Collection 2024</h3>
+          <h1 class="main-heading">New Season</h1>
+          <a href="#" class="btn-custom mt-3">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="img/slide-02.jpg.webp" class="d-block w-100" alt="Men's Jackets">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-caption text-start animate-caption">
+          <h3 class="sub-heading">Men New-Season</h3>
+          <h1 class="main-heading">Jackets & Coats</h1>
+          <a href="#" class="btn-custom mt-3">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="img/slide-03.jpg.webp" class="d-block w-100" alt="Men's New Arrivals">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-caption text-start animate-caption">
+          <h3 class="sub-heading">Men Collection 2024</h3>
+          <h1 class="main-heading">New Arrivals</h1>
+          <a href="#" class="btn-custom mt-3">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
   </div>
+</section>
 
-  <!-- hero section or carosel -->
-  <section class="carousel">
-
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="img/slide-01.jpg.webp" class="d-block w-100" alt="...">
-          <div class="carousel-caption top-0 end-100 mt-lg-5 pt-lg-5 me-5 w-50 caro-text">
-            <h3 class=" mt-5 pt-5 me-5 fs-5  text-dark ">women Collecton 2024</h3>
-            <h1 class=" mt-2 me-5 text-dark">New season</h1>
-            <button class="normal me-2 mt-3"> Shop now</button>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/slide-02.jpg.webp" class="d-block w-100" alt="...">
-          <div class="carousel-caption top-0 end-100 mt-5 pe-3 pt-5 me-5  w-50 caro-text">
-            <h3 class=" mt-5 pt-5 me-5 fs-5 text-dark">Men New-Season</h3>
-            <h1 class=" mt-2 me-5 pe-5 text-dark">Jackets & Coats</h1>
-            <button class="normal me-2 mt-3"> Shop now</button>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/slide-03.jpg.webp" class="d-block w-100" alt="...">
-          <div class="carousel-caption top-0 end-100 mt-5 pt-5 me-5  w-50 caro-text">
-            <h3 class=" mt-5 pt-5 me-5 fs-5 text-dark">Men Collecton 2024</h3>
-            <h1 class=" mt-2 me-5 text-dark">New Arrivals</h1>
-            <button class="normal me-2 mt-3"> Shop now</button>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-  </section>
 
   <!-- banner section is start -->
   <div class="container text-center margin-m1">

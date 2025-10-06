@@ -1,12 +1,23 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-  <div class="container-fluid">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="asessts/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container-fluid py-2 px-lg-5">
     <!-- Logo -->
-    <a class="navbar-brand fw-bold ps-4" href="#">
+    <a class="navbar-brand fw-bold fs-3" href="#">
       Sky<span class="logo">Way</span>
     </a>
 
-    <!-- Mobile toggle -->
+    <!-- Mobile Toggle -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,76 +34,45 @@
       </ul>
     </div>
 
-    <!-- Login/Signup button -->
-    <div class="d-flex">
-      <a href="login.php" class="btn-custom me-2">Login</a>
+    <!-- Right Section -->
+    <div class="d-flex align-items-center gap-3">
+      
+      <!-- Favorite Icon -->
+      <a href="favorites.php" class="icon-link position-relative">
+        <i class="bi bi-heart"></i>
+        <span class="fav-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm">
+          2
+        </span>
+      </a>
+
+      <!-- Cart Icon -->
+      <a href="cart.php" class="icon-link position-relative">
+        <i class="bi bi-cart3"></i>
+        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary shadow-sm">
+          3
+        </span>
+      </a>
+
+      <!-- Buttons -->
+      <a href="login.php" class="btn-custom">Login</a>
       <a href="signup.php" class="btn-custom-outline">Sign Up</a>
     </div>
   </div>
 </nav>
 
-<!-- Custom CSS -->
-<style>
-  /* Navbar glass effect */
-  #navbar {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
+</body>
+</html>
 
-  /* Logo style */
-  .navbar-brand {
-    font-size: 1.6rem;
-    color: #2c3e50;
-    letter-spacing: 1px;
-  }
-  .navbar-brand .logo {
-    color: #667eea;
-  }
 
-  /* Nav links */
-  .nav-link {
-    color: #2c3e50 !important;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  .nav-link:hover {
-    color: #667eea !important;
-  }
-  .nav-link.active::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #667eea;
-    border-radius: 5px;
-  }
 
-  /* Buttons */
-  .btn-custom {
-    background: #667eea;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: 0.3s;
+<!-- JS to Shrink Navbar on Scroll -->
+<script>
+window.addEventListener("scroll", function() {
+  const navbar = document.getElementById("navbar");
+  if (window.scrollY > 40) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
   }
-  .btn-custom:hover {
-    background: #5563c1;
-    color: #fff;
-  }
-  .btn-custom-outline {
-    border: 2px solid #667eea;
-    padding: 8px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    color: #667eea;
-    transition: 0.3s;
-  }
-  .btn-custom-outline:hover {
-    background: #667eea;
-    color: #fff;
-  }
-</style>
+});
+</script>
