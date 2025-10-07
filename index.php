@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<p id="success-message"></p>
   <?php include 'header.php' ?> 
 
  <!-- Hero Section / Carousel -->
@@ -145,7 +146,7 @@
               <p class="card-price fw-bold text-primary mb-1">Rs <?= number_format($product['price'], 2); ?></p>
               <p class="card-text text-muted small"><?= substr($product['description'], 0, 50); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
-                <a class="btn btn-sm btn-outline-primary" href="add_to_cart.php?id=<?= $product['id']?>">Add to Cart</a>
+                <a class="btn btn-sm btn-outline-primary" onclick="addToCart(<?= $product['id'] ?>)">Add to Cart</a>
                 <i class="fa-regular fa-heart heart-btn"></i>
               </div>
             </div>
@@ -176,3 +177,45 @@
 </body>
 
 </html>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+
+
+<script>
+function addToCart(productId) {
+  $.ajax({
+    url: 'add_to_cart.php',
+    type: 'GET',
+    data: { id: productId },
+    dataType: 'json',
+    success: function(response) {
+      if (response.status) {
+        showSuccessMessage('✅ ' + response.message);
+        $('#cart-count').text(response.count);
+        // let $count = $('#cart-count');
+        // let currentCount = parseInt($count.text()) || 0;
+        // $count.text(currentCount + 1);
+      } else {
+        showSuccessMessage('⚠️ ' + response.message, true);
+      }
+    },
+    error: function() {
+      showSuccessMessage('❌ Something went wrong. Try again later.', true);
+    }
+  });
+}
+
+/* ✅ Toast-like message display */
+function showSuccessMessage(message, isError = false) {
+  let $msg = $('#success-message');
+  
+  $msg.text(message)
+      .css('background', isError ? 'linear-gradient(90deg, #dc3545, #ff6b6b)' : 'linear-gradient(90deg, #28a745, #20c997)')
+      .addClass('show');
+
+  setTimeout(() => {
+    $msg.removeClass('show');
+  }, 1500);
+}
+
+</script>

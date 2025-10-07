@@ -40,16 +40,19 @@
       <!-- Favorite Icon -->
       <a href="favorites.php" class="icon-link position-relative">
         <i class="bi bi-heart"></i>
-        <span class="fav-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm">
-          2
+        <span class="fav-count position-absolute top-0 start-100 translate-middle  text-dark shadow-sm ic0n-bg">
+        
         </span>
       </a>
+      <?php
 
+$cartCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+?>
       <!-- Cart Icon -->
-      <a href="cart.php" class="icon-link position-relative">
+      <a href="cart.php" class="icon-link position-relative me-5">
         <i class="bi bi-cart3"></i>
-        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary shadow-sm">
-          3
+        <span id="cart-count" class="cart-count position-absolute top-0 start-100 translate-middle  text-dark ic0n-bg shadow-sm">
+          <?= $cartCount ?>
         </span>
       </a>
 
@@ -65,14 +68,4 @@
 
 
 
-<!-- JS to Shrink Navbar on Scroll -->
-<script>
-window.addEventListener("scroll", function() {
-  const navbar = document.getElementById("navbar");
-  if (window.scrollY > 40) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
