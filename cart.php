@@ -45,7 +45,8 @@ $total = 0;
                                     <img src="img/uploads/<?= htmlspecialchars($item['image_url']) ?>"
                                         alt="<?= htmlspecialchars($item['name']) ?>" width="70" class="rounded shadow-sm">
                                 </td>
-                                <td><?= htmlspecialchars($item['sizes'] ?? '-') ?></td>
+                                <td><?= htmlspecialchars(is_array($item['sizes']) ? implode(', ', $item['sizes']) : ($item['sizes'] ?? '-')) ?></td>
+
                                 <td>Rs. <?= number_format($item['price']) ?></td>
                                 <td>
                                     <button class="btn btn-sm btn-outline-secondary update-qty" data-id="<?= $item['id'] ?>"

@@ -1,0 +1,36 @@
+.product-image-wrapper {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-image-wrapper:hover .main-image {
+    transform: scale(1.05);
+  }
+  
+  .size-btn {
+    border-radius: 30px;
+    transition: 0.2s ease;
+  }
+  .size-btn:hover {
+    background-color: #667eea;
+    color: #fff;
+    border-color: #667eea;
+  }
+  
+  .btn-primary {
+    background-color: #667eea;
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: #5563c1;
+  }
+  
+  .main-image {
+    transition: transform 0.4s ease;
+    cursor: zoom-in;
+  }
+  .size-btn.active {
+    border-color: #0d6efd !important;
+    background-color: #0d6efd !important;
+    color: #fff !important;
+  }

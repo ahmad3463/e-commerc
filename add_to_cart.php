@@ -24,12 +24,15 @@ try {
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($product) {
-        // ✅ Initialize cart if empty
+
+        $product['sizes'] = $product['sizes'] ? explode(',' , $product['sizes']) : [];
+
+        //  Initialize cart if empty
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
 
-        // ✅ Add or update product quantity
+        //  Add or update product quantity
         if (isset($_SESSION['cart'][$product_id])) {
             $_SESSION['cart'][$product_id]['quantity'] += 1;
         } else {
@@ -45,7 +48,7 @@ try {
             ];
         }
 
-        // ✅ Return JSON response with updated count
+        //  Return JSON response with updated count
         echo json_encode([
             "status" => true,
             "message" => "Product added to cart",

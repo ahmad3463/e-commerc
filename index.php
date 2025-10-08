@@ -80,7 +80,7 @@
   <div class="container text-center margin-m1">
     <div class="row justify-content-center">
       <div class="col-lg-4 col-md-6 mb-sm-2 position-relative hover-col">
-        <div class="card">
+        <div class="card" >
           <img src="img/banner-01.jpg.webp" class="card-img-top" alt="...">
         </div>
         <div class="card-body position-absolute top-0  ms-5">
@@ -122,7 +122,7 @@
   <!-- dynamic products -->
 <div class="container-fluid margin-m1 position-relative py-5">
   <h1 class="fw-bold text-center mb-5">Product Overview</h1>
-  <div class="row g-4">
+  <div class="row g-4" >
     <?php
     $stmt = $conn->prepare("SELECT p.id, p.name, p.description, p.price, p.stock, 
        (SELECT image_url FROM product_images WHERE product_id = p.id LIMIT 1) as image_url
@@ -135,7 +135,7 @@
     <?php if ($products): ?>
       <?php foreach ($products as $product): ?>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card product-card h-100 shadow-sm border-0">
+          <div class="card product-card h-100 shadow-sm border-0" onclick="viewDetail(<?= $product['id'] ?>)">
             <div class="card-img-wrapper">
               <img src="img/uploads/<?= $product['image_url'] ? $product['image_url'] : 'img/no-image.png'; ?>" 
                    class="card-img-top" alt="<?= htmlspecialchars($product['name']); ?>">
@@ -218,4 +218,7 @@ function showSuccessMessage(message, isError = false) {
   }, 1500);
 }
 
+function viewDetail(productId) {
+  window.location.href = "product_detail.php?id=" + productId;
+}
 </script>
