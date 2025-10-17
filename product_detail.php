@@ -103,7 +103,7 @@ let selectedSize = null;
             dataType: 'json',
             success: function (response) {
                 if (response.status) {
-                    showSuccessMessage('✅ ' + response.message);
+                    showSuccessMessage('' + response.message);
                     $('#cart-count').text(response.count);
                     // let $count = $('#cart-count');
                     // let currentCount = parseInt($count.text()) || 0;
@@ -113,7 +113,7 @@ let selectedSize = null;
                 }
             },
             error: function () {
-                showSuccessMessage('❌ Something went wrong. Try again later.', true);
+                showSuccessMessage(' Something went wrong. Try again later.', true);
             }
         });
     }
@@ -129,14 +129,14 @@ let selectedSize = null;
         }, 1500);
     }
 
-     // ✅ When user clicks a size
+     //When user clicks a size
   $('.size-btn').on('click', function() {
     $('.size-btn').removeClass('active btn-primary').addClass('btn-outline-secondary');
     $(this).addClass('active btn-primary').removeClass('btn-outline-secondary');
     selectedSize = $(this).text().trim();
   });
 
-  // ✅ Add to Cart Click
+  // Add to Cart Click
   $('#addToCartBtn').on('click', function() {
     const productId = $(this).data('id');
 
@@ -152,7 +152,7 @@ let selectedSize = null;
       dataType: 'json',
       success: function(response) {
         if (response.status) {
-          alert('✅ Product added to cart!');
+          alert('Product added to cart!');
         } else {
           alert(response.message);
         }
