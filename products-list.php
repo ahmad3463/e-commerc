@@ -74,8 +74,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     ?>
                   </td>
                   <td class="text-center">
-                    <a href="edit-product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm btn-warning me-2">Edit</a>
-                    <a href="delete-product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm btn-danger"
+                    <a href="edit_product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm btn-warning me-2">Edit</a>
+                    <a href="delete_product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm btn-danger"
                        onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
                   </td>
                 </tr>
