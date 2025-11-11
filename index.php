@@ -135,8 +135,8 @@
     <?php if ($products): ?>
       <?php foreach ($products as $product): ?>
         <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card product-card h-100 shadow-sm border-0" onclick="viewDetail(<?= $product['id'] ?>)">
-            <div class="card-img-wrapper">
+          <div class="card product-card h-100 shadow-sm border-0" >
+            <div class="card-img-wrapper" onclick="viewDetail(<?= $product['id'] ?>)">
               <img src="img/uploads/<?= $product['image_url'] ? $product['image_url'] : 'img/no-image.png'; ?>" 
                    class="card-img-top" alt="<?= htmlspecialchars($product['name']); ?>">
              

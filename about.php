@@ -1,3 +1,4 @@
+<?php include 'config/conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 
 <body>
 
-<?php include 'header.php' ?>
+<?php include 'header.php'; ?>
 
     <!-- about-in  -->
   <section class="about-in ">
@@ -75,7 +76,7 @@
 
 
 
-  <script src="asessts/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="asessts/js/bootstrap.bundle.min.js"></script> -->
   <script src="js/script.js"></script>
 </body>
 

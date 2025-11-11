@@ -72,7 +72,7 @@
 <body>
   <div class="form-container">
     <h2>Create Account</h2>
-    <form method="POST" action="" id="signup">
+    <form method="POST"  id="signup">
       <input type="text" placeholder="Full Name" name="username" required>
       <input type="email"  placeholder="Email Address" name="useremail" required>
       <input type="password" placeholder="Password"  name="userpass" required>
@@ -106,7 +106,10 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       success: function(data){
         $('#datamessage').html(data.message);
-        window.location.href = "index.php";
+        if(data.status){
+
+          window.location.href = "index.php";
+        }
       },
       error: function(xhr , status ,error){
         console.log( error);

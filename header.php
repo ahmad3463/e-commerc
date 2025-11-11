@@ -13,7 +13,7 @@
   <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
   <div class="container-fluid py-2 px-lg-5">
     <!-- Logo -->
-    <a class="navbar-brand fw-bold fs-3" href="#">
+    <a class="navbar-brand fw-bold fs-3" href="index.php">
       Sky<span class="logo">Way</span>
     </a>
 
@@ -56,9 +56,14 @@ $cartCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         </span>
       </a>
 
+      <?php if(isset($_SESSION['user_id'])): ?>
+        <a href="account.php" class="btn-custom"><?= $_SESSION['user_name']?></a>
+
+        <?php else :?>
       <!-- Buttons -->
       <a href="login.php" class="btn-custom">Login</a>
       <a href="signup.php" class="btn-custom-outline">Sign Up</a>
+      <?php endif; ?>
     </div>
   </div>
 </nav>
