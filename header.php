@@ -15,7 +15,7 @@
       display: none;
       position: absolute;
       top: 90%;
-      right: 30;
+      right: 15px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
