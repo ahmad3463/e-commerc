@@ -41,7 +41,7 @@ foreach ($salesData as $row) {
 
 ?>
 
-<div class="container-fluid p-4">
+<div class="container-fluid p-4" >
   <h2 class="mb-4">Admin Dashboard</h2>
 
   <div class="row">
