@@ -1,9 +1,9 @@
 <?php
-include '../config/conn.php';
-include '../header.php';
+include 'config/conn.php';
+include 'header.php';
 
 if(!isset($_SESSION['user_id'])){
-header("Location: /PHP-projects/E-commerceapi/login.php");
+header("Location: login.php");
 exit;
 }
 

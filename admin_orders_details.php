@@ -37,7 +37,7 @@ try {
     $stmtItems->execute([$orderId]);
     $items = $stmtItems->fetchAll(PDO::FETCH_ASSOC);
 
-    // ✅ Handle status update
+    // Handle status update
     if (isset($_POST['update'])) {
         $status = $_POST['status'];
 
