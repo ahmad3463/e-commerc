@@ -49,7 +49,7 @@ include 'top.php'
                                         <span class="badge bg-info ">User</span>
                                     <?php endif ?>
                                     <td class="text-center">
-                                        <button class="btn btn-sm btn-warning me-2">Edit</button>
+                                        <a class="btn btn-sm btn-warning me-2" href="user_edit.php?id=<?= $user->id?>">Edit</a>
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </td>
                                 </tr>

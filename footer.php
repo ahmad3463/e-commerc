@@ -1,4 +1,4 @@
-<footer class="footer ">
+<footer class="footer mt-5 ">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6">
@@ -89,7 +89,7 @@
         </div>
 
         <div class="col-12 text-center">
-          <p>Copyright ©2024 All rights reserved | SKYWAY</p>
+          <p>Copyright ©2025 All rights reserved | SKYWAY</p>
         </div>
       </div>
     </div>

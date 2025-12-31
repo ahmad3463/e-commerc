@@ -147,7 +147,7 @@
               <p class="card-text text-muted small"><?= substr($product['description'], 0, 50); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
                 <a class="btn btn-sm btn-outline-primary" onclick="addToCart(<?= $product['id'] ?>)">Add to Cart</a>
-                <i class="fa-regular fa-heart heart-btn"></i>
+                <i class="fa-regular fa-heart heart-btn" onclick="whishlist(<?= $product['id']?>)"></i>
               </div>
             </div>
           </div>
@@ -190,22 +190,20 @@ function addToCart(productId) {
     dataType: 'json',
     success: function(response) {
       if (response.status) {
-        showSuccessMessage('✅ ' + response.message);
+        showSuccessMessage( response.message);
         $('#cart-count').text(response.count);
-        // let $count = $('#cart-count');
-        // let currentCount = parseInt($count.text()) || 0;
-        // $count.text(currentCount + 1);
+    
       } else {
-        showSuccessMessage('⚠️ ' + response.message, true);
+        showSuccessMessage( response.message, true);
       }
     },
     error: function() {
-      showSuccessMessage('❌ Something went wrong. Try again later.', true);
+      showSuccessMessage(' Something went wrong. Try again later.', true);
     }
   });
 }
 
-/* ✅ Toast-like message display */
+/*  Toast-like message display */
 function showSuccessMessage(message, isError = false) {
   let $msg = $('#success-message');
   
@@ -220,5 +218,20 @@ function showSuccessMessage(message, isError = false) {
 
 function viewDetail(productId) {
   window.location.href = "product_detail.php?id=" + productId;
+}
+
+function whishlist(productId){
+  $.ajax({
+    url: 'wishlist.php',
+    type: "POST",
+   data: {id: productId},
+   dataType: 'json',
+    success: function(response){
+        alert(response.message);
+    },
+    error: function(xhr, status, error){
+      console.log(xhr.responseText);
+    }
+  })
 }
 </script>
